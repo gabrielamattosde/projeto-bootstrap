@@ -74,7 +74,7 @@ header, .navbar{
 }
 
 .main-btn{
-    background-color: #65DAf9;
+    background-color: #1999bd;
     color:#FFF;
     text-transform: uppercase;
     width: 200px;
@@ -89,5 +89,9 @@ header, .navbar{
     text-decoration: none;
     color:#FFF;
     background-color: transparent;
-    border-color:#65DAF9;
+    border-color:#43cef5;
+}
+
+.carousel-indicators .active {
+    background-color: #1999bd;
 }
