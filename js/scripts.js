@@ -7,11 +7,11 @@ $(document).ready(function() {
 
     let circleA = new ProgressBar.Circle(containerA, {
 
-        color: "#64DAF9",
-        stroke: 8,
+        color: "#1999bd",
+        strokeWidth: 8,
         duration: 1400,
         from: { color: '#AAA'},
-        to: {color: '#65DAF9'},
+        to: {color: '#1999bd'},
 
         step: function(state, circle){
             circle.path.setAttribute('stroke', state.color);
@@ -23,6 +23,73 @@ $(document).ready(function() {
 
     });
 
+    let containerB = document.getElementById("circleB");
+
+    let circleB = new ProgressBar.Circle(containerB, {
+
+        color: "#1999bd",
+        strokeWidth: 8,
+        duration: 1600,
+        from: { color: '#AAA'},
+        to: {color: '#1999bd'},
+
+        step: function(state, circle){
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 254);
+
+            circle.setText(value);
+        }
+
+    });
+
+    let containerC = document.getElementById("circleC");
+
+    let circleC = new ProgressBar.Circle(containerC, {
+
+        color: "#1999bd",
+        strokeWidth: 8,
+        duration: 2000,
+        from: { color: '#AAA'},
+        to: {color: '#1999bd'},
+
+        step: function(state, circle){
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 32);
+
+            circle.setText(value);
+        }
+
+    });
+
+    let containerD = document.getElementById("circleD");
+
+    let circleD = new ProgressBar.Circle(containerD, {
+
+        color: "#1999bd",
+        strokeWidth: 8,
+        duration: 2200,
+        from: { color: '#AAA'},
+        to: {color: '#1999bd'},
+
+        step: function(state, circle){
+            circle.path.setAttribute('stroke', state.color);
+
+            let value = Math.round(circle.value() * 5456);
+
+            circle.setText(value);
+        }
+
+    });
+
+    // Iniciando
+
+
+
     circleA.animate(1.0);
+    circleB.animate(1.0);
+    circleC.animate(1.0);
+    circleD.animate(1.0);
 
 });
