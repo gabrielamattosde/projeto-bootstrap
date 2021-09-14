@@ -111,4 +111,48 @@ $(document).ready(function() {
 
     }, 250);
 
+    // filtro do portfólio
+
+    $('.filter-btn').on('click', function() {
+
+        let type = $(this).attr('id');
+        let boxes = $('.project-box');
+
+        $('.main-btn').removeClass('active');
+        $(this).addClass('active');
+// se tiver a classe do tipo que enviou
+
+        if(type == 'dsg-btn') {
+            eachBoxes('dsg', boxes)
+        } else if(type == 'dev-btn') {
+          eachBoxes('dev', boxes);
+        } else if(type == 'seo-btn') {
+            eachBoxes('seo', boxes);
+        }else {
+            eachBoxes('all', boxes);
+        }  
+
+
+    });
+
+
+    function eachBoxes(type, boxes) {
+
+        if(type =='all') {
+            $(boxes).fadeIn();
+        } else {
+            $(boxes).each(function() {
+                if(!$(this).hasClass(type)) {
+                    // esconda a caixinha
+                    $(this).fadeOut ('slow');
+                } else {
+                    // se tiver a class do tipo que enviou, mostre a caixinha
+                    $(this).fadeIn();
+                }
+
+            });
+        }
+
+    }
+
 });
